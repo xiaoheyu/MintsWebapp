@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 # MEVN-Mints THIS IS BRANCH1  WHAT? IT SHOULD BE MASTER  second change on master
-master change while branch2 in commit
-=======
+master change while branch2 in commit  231231231231231
 
 # MEVN-Mints This is the second change on Branch1 THIS IS THE BRANCH2 stay in commit
 
