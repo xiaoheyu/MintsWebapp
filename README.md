@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 # MEVN-Mints THIS IS BRANCH1  WHAT? IT SHOULD BE MASTER  second change on master
 master change while branch2 in commit
+=======
+
+# MEVN-Mints This is the second change on Branch1 THIS IS THE BRANCH2 stay in commit
+
+>>>>>>> 63be5864fa1cc6430b67e88fa7fee94f6c3c4b95
 
 A fullstack web app with Mongo, ExpressJS, VueJS and NodeJS.
 
