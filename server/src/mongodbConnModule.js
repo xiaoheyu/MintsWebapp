@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 module.exports.connect = function() {
-	mongoose.connect('mongodb://localhost:27017/OpenAQ');
+	mongoose.connect('mongodb://imd.utdallas.edu:27017/OpenAQ');
 	var db = mongoose.connection;
 	db.on("error", console.error.bind(console, "connection error"));
 	db.once("open", function(callback){
