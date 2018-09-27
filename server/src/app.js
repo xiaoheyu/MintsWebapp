@@ -13,7 +13,7 @@ var db = mongodb_conn_module.connect();
 
 var Post = require("../models/post");
 
-app.get('/row', (req, res) => {
+app.get('/latest', (req, res) => {
   Post.find({"date.utc":"2018-07-28T10:00:00.000Z","parameter":"pm25","country":"US","coordinates.latitude":{$exists:true}},"country city date.utc coordinates value parameter", function (error, po) {
 	  if (error) { console.error(error); }
 	  res.send({

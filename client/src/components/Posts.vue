@@ -3,62 +3,63 @@
     <div class="row" style="background-color:lightgrey;">
       <div class="col">
         <h1>Map</h1>
+          <GmapMap
+              :center="{lat:31.9686,lng:-99.9018}"
+              :zoom="6"
+              map-type-id="roadmap"
+              style="width: 1000px; height: 1000px;"
+          >
+       
 
-      <GmapMap
-          :center="{lat:31.9686,lng:-99.9018}"
-          :zoom="6"
-          map-type-id="roadmap"
-          style="width: 1000px; height: 1000px;"
-        >
-     
+              <!-- 
+              <gmap-marker
+                :key="index"
+                v-for="(m, index) in markers"
+                :position="m.position"
+             
 
-    <!--<gmap-marker
-        :key="index"
-        v-for="(m, index) in markers"
-        :position="m.position"
-     
+                @click="center=m.position">
+                </gmap-marker> 
+              -->
 
-        @click="center=m.position"
-      ></gmap-marker> -->
+          
+          
+              <div v-for="(m, index) in markers">
 
-      
-      
-  <div v-for="(m, index) in markers">
+                 <gmap-circle
 
-       <gmap-circle
+                 :center="m.position" 
+                 :radius = 10000
+                 :fillColor = "m.color"
+                 ></gmap-circle>
+              </div>
 
-       :center="m.position" 
-       :radius=10000 
-       :fillColor = "m.color"
-       ></gmap-circle>
-       </div>
+          </GmapMap>
 
-       </GmapMap>
-      <div>
-
-      <div class='my-legend'>
-<div class='legend-title'>pm2.5 color legend (µg/m³)</div>
-<div class='legend-scale'>
-  <ul class='legend-labels'>
-    <li><span style='background:#BC8F8F;'></span><=6</li>
-    <li><span style='background:#FFFF00;'></span>(6-9]</li>
-    <li><span style='background:#d6bb2f;'></span>(9-12]</li>
-    <li><span style='background:#FFA500;'></span>(12-15]</li>
-    <li><span style='background:#FF4500;'></span>(15-18]</li>
-    <li><span style='background:#FF0000;'></span>(18-21]</li>
-    <li><span style='background:#8B0000;'></span>(21-24]</li>
-    <li><span style='background:#6A5ACD;'></span>(24-27]</li>
-    <li><span style='background:#483D8B;'></span>(27-30]</li>
-    <li><span style='background:#191970;'></span>>30</li>
-  </ul>
-</div>
-</div>
-
-      </div>
+        <div>
+          <div class='my-legend'>
+            <div class='legend-title'>pm2.5 color legend (µg/m³)</div>
+              <div class='legend-scale'>
+                <ul class='legend-labels'>
+                  <li><span style='background:#BC8F8F;'></span><=6</li>
+                  <li><span style='background:#FFFF00;'></span>(6-9]</li>
+                  <li><span style='background:#d6bb2f;'></span>(9-12]</li>
+                  <li><span style='background:#FFA500;'></span>(12-15]</li>
+                  <li><span style='background:#FF4500;'></span>(15-18]</li>
+                  <li><span style='background:#FF0000;'></span>(18-21]</li>
+                  <li><span style='background:#8B0000;'></span>(21-24]</li>
+                  <li><span style='background:#6A5ACD;'></span>(24-27]</li>
+                  <li><span style='background:#483D8B;'></span>(27-30]</li>
+                  <li><span style='background:#191970;'></span>>30</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
 
-      </div>
+
       <div class="col" style="padding:50;">
         <h1>OpenAQ Table</h1>
         <div v-if="posts.length > 0" class="table-wrap">
@@ -75,17 +76,15 @@
               <td>{{ post.value }}</td>
               <td align="center">
               {{post.parameter}}</td>
-
-
-
            </tr>
           </table>
         </div>
         <div v-else>
           There are no posts.. Lets add one now <br /><br />
         </div>
+      </div>
+
     </div>
-  </div>
   </div>
 </template>
 
@@ -101,17 +100,7 @@ export default {
       posts: [],
       center:[31.9686,-99.9018],
       color:[],
-     markers:[
-          /*{position:{lat:45.863899,lng:-122.410889},value:20,color:'#f7ae91'
-          },
-          {
-          position:{lat:45.64336,lng:-122.58737},value:14,color:'#aaaaaa'
-          },
-          {
-        position:{lat:36.139707,lng:-115.175654},value:18,color:'#ffffff'
-        }*/
-     
-          ]
+     markers:[]
   
 
  }
@@ -172,24 +161,6 @@ export default {
       console.log(this.markers);
 
     }
-
-    /*async getCors(){
- 
-    for (var i=0;this.markers.length;i++){
-
-    this.oldcors.push(this.markers[i].position)
-    }
-    this.newcors = this.oldcors
-   for (var i=0; i<this.oldcors.length;i++){
-
-    this.newcors[i]["lat"]=this.oldcors[i]["latitude"]
-    return newcors
-    
-
-    }
-
-    } */
-
 
 
     
