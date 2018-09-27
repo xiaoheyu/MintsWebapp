@@ -203,34 +203,11 @@ export default {
           else if (response.data.post[sample].value > 4.5 && response.data.post[sample].value <=5){
           color = "#0024ff"
         }
-          else if (response.data.post[sample].value > 1 && response.data.post[sample].value <=1.5){
-          color = "#0036ff"
-        }
-         else if (response.data.post[sample].value > 1.5 && response.data.post[sample].value <=2){
-          color = "#0047ff"
-        }
-          else if (response.data.post[sample].value > 2 && response.data.post[sample].value <=2.5){
-          color = "#0059ff"
-        }
-           else if (response.data.post[sample].value > 2.5 && response.data.post[sample].value <=3){
-          color = "#006bff"
-        }
-             else if (response.data.post[sample].value > 3 && response.data.post[sample].value <=3.5){
-          color = "#007dff"
-        }
-              else if (response.data.post[sample].value > 3.5 && response.data.post[sample].value <=4){
-          color = " #008fff"
-        }
-               else if (response.data.post[sample].value > 4 && response.data.post[sample].value <=4.5){
-          color = "#00a1ff"
-        }        else if (response.data.post[sample].value > 4.5 && response.data.post[sample].value <=5){
-          color = "#00b3ff"
-        }
           else if (response.data.post[sample].value > 5 && response.data.post[sample].value <=5.5){
           color = "#00c4ff"
         }
          else if (response.data.post[sample].value > 5.5 && response.data.post[sample].value <=6){
-          color = "##00e8ff"
+          color = "#00e8ff"
         }
           else if (response.data.post[sample].value > 6 && response.data.post[sample].value <=6.5){
           color = "#00faff"
